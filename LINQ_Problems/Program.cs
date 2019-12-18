@@ -14,29 +14,33 @@ namespace LINQ_Problems
             //the substring “th” from a list . 
             //•	List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", “mathematics” };
 
-            List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics"};
+           // List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics"};
 
-           var wordWithTh = "th";
+           //var wordWithTh = "th";
 
-            // List<string> listWithTh= words.Where(w => w.Contains(wordWithTh)).ToList();
+           // // List<string> listWithTh= words.Where(w => w.Contains(wordWithTh)).ToList();
 
-           var listWithTh= words.Where(w => w.Contains(wordWithTh)); 
+           //var listWithTh= words.Where(w => w.Contains(wordWithTh)); 
 
-            foreach (var word in words)
-            {
-                Console.WriteLine(word);
+           // foreach (var word in words)
+           // {
+           //     Console.WriteLine(word);
                
-            }
+           // }
 
             
-
             //2.Using LINQ, write a function that takes in a list of strings and returns a copy of the list without 
             //duplicates.
             //•	List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Zack", "Mike" };
 
-            //•	List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Zack", "Mike" };
+           	List<string> names = new List<string>() { "Mike", "Brad", "Nevin", "Zack", "Mike" };
 
+           List<string> distinctNames = names.Distinct().ToList();
 
+               foreach (var name in distinctNames)
+            {
+                Console.WriteLine(name);
+            }
             //3. Using LINQ, write a function that calculates the class grade average after 
             //dropping the lowest grade for each student. The function should take in a list of 
             //strings of grades (e.g., one string might be "90,100,82,89,55"), drops the lowest 
