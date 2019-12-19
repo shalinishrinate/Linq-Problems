@@ -13,7 +13,8 @@ namespace LINQ_Problems
             //1. Using LINQ, write a function that returns all words that contain the substring “th” from a list. 
             //List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", “mathematics” };
 
-             void ReturnWordsWithTh() {
+             //void ReturnWordsWithTh() {
+
                 List<string> words = new List<string>() { "the", "bike", "this", "it", "tenth", "mathematics" };
 
                 var wordWithTh = "th";
@@ -24,7 +25,7 @@ namespace LINQ_Problems
                 {
                     Console.WriteLine(word);
                 }
-            }
+             //}
 
 
             //2.Using LINQ, write a function that takes in a list of strings and returns a copy of the list without duplicates.
@@ -58,49 +59,40 @@ namespace LINQ_Problems
 
            // void AverageOfGrades() {
                 List<string> classGrades = new List<string>()
-            {
+                {
                 "80,100,92,89,65",
                 "93,81,78,84,69",
                 "73,88,83,99,64",
                 "98,100,66,74,55"
-            };
+                };
 
                 var newClassGrades = classGrades.Select(c => c.Split(',').Select(n => Convert.ToInt32(n)).OrderByDescending(n => n).Take(c.Split(',').Length - 1).Average()).Average();
                 
                 Console.WriteLine(newClassGrades);
-                
-           // }
 
-               
-
-
+            // }
 
 
             //4. Write a function that takes in a string of letters (i.e. “Terrill”) and 
             //returns an alphabetically ordered string corresponding to the letter frequency 
             //(i.e. "E1I1L2R2T1")
 
-            //string name = "Terrill";
-            // char[] nameArray = name.ToCharArray();
-            // var nameOrder = nameArray.OrderByAscending(n => n);
-
-
-            // //for (int i = 0; i < nameArray.Length; i++)
-            // //{
-            // //    Console.WriteLine(nameArray[i]);
-            // //}
-
             //public static string GetLetterString()
             //{
-            //    Console.WriteLine("Please enter a word");
-            //    string input = Console.ReadLine();
+                Console.WriteLine("Please enter a word");
+                string input = Console.ReadLine();
 
-            //    char[] nameArray = input.ToCharArray();
-            //    var nameOrder = nameArray.OrderBy(n => n);
-
-            //    var nameGroup = nameOrder.GroupBy(n => n).Select
-            //}
-
+                var nameArray = input.ToUpper().ToArray().OrderBy(n => n).GroupBy(n => n);
+                var resultName = nameArray.Select(n => $"{ n.Last()}{ n.Count()}");
+                string finalResult = "";
+                foreach (var letter in resultName)
+                {
+                finalResult += letter.ToString();
+                }
+                Console.WriteLine(finalResult);
+                Console.ReadLine();
+             // }
+  
         }
     }
 }
